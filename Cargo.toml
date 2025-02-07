@@ -1,0 +1,17 @@
+[package]
+name = "websockets"
+version = "0.1.0"
+edition = "2021"
+
+
+[dependencies]
+tungstenite = "0.20"  # WebSocket library
+url = "2.2"
+
+[[bin]]
+name = "server"
+path = "src/server.rs"
+
+[[bin]]
+name = "client"
+path = "src/client.rs"
