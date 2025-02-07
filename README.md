@@ -1,10 +1,10 @@
-# Running the Server
+## Running the Server
 
 ```
 cargo run --bin server
 ```
 
-# Running the Client
+## Running the Client
 
 1. Update the destination
 2. Run the lcient
