@@ -5,9 +5,9 @@ use tungstenite::accept;
 use tungstenite::Message;
 
 fn main() {
-    let server = TcpListener::bind("127.0.0.1:9001").expect("Failed to bind server");
+    let server = TcpListener::bind("0.0.0.0:9001").expect("Failed to bind server");
 
-    println!("WebSocket server started on ws://127.0.0.1:9001");
+    println!("WebSocket server started on ws://0.0.0.0:9001");
 
     for stream in server.incoming() {
         match stream {

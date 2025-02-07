@@ -5,7 +5,7 @@ edition = "2021"
 
 
 [dependencies]
-tungstenite = "0.20"  # WebSocket library
+tungstenite = { version = "0.20", features = ["native-tls"]}
 url = "2.2"
 
 [[bin]]

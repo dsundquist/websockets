@@ -5,7 +5,7 @@ use url::Url;
 
 
 fn main() {
-    let url = Url::parse("ws://pingpong.gotestserver.com").expect("Invalid WebSocket URL");
+    let url = Url::parse("wss://pingpong.gotestserver.com").expect("Invalid WebSocket URL");
 
     let (mut socket, response) = connect(url).expect("Failed to connect to server");
 
