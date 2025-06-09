@@ -5,13 +5,24 @@ edition = "2021"
 
 
 [dependencies]
-tungstenite = { version = "0.20", features = ["native-tls"]}
-url = "2.2"
+rustls = "0.23.27"
+rustls-pemfile = "2.2.0"
+rustls-pki-types = "1.12.0"
+tungstenite = { version = "0.26", features = ["rustls"]}
+url = { version = "2.2" }
 
 [[bin]]
 name = "server"
 path = "src/server.rs"
 
 [[bin]]
+name = "sserver"
+path = "src/sserver.rs"
+
+[[bin]]
 name = "client"
 path = "src/client.rs"
+
+[[bin]]
+name = "sclient"
+path = "src/sclient.rs"

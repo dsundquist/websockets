@@ -5,7 +5,7 @@ use tungstenite::accept;
 use tungstenite::Message;
 
 fn main() {
-    let server = TcpListener::bind("0.0.0.0:9001").expect("Failed to bind server");
+    let server = TcpListener::bind("0.0.0.0:9001").expect("Failed to bind server"); 
 
     println!("WebSocket server started on ws://0.0.0.0:9001");
 
@@ -24,7 +24,8 @@ fn main() {
                         let seconds = elapsed.as_secs() % 60;
 
                         let message = format!("Connection Duration: {} min {} sec", minutes, seconds);
-                        websocket.send(Message::Text(message)).unwrap();
+                        let message = tungstenite::Bytes::from(message);
+                        websocket.send(Message::Binary(message)).unwrap();
 
                         thread::sleep(Duration::from_secs(1));
 

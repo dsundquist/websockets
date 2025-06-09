@@ -3,9 +3,8 @@ use std::time::Duration;
 use tungstenite::{connect, Message};
 use url::Url;
 
-
 fn main() {
-    let url = Url::parse("wss://pingpong.gotestserver.com").expect("Invalid WebSocket URL");
+    let url = "ws://127.0.0.1:9001";
 
     let (mut socket, response) = connect(url).expect("Failed to connect to server");
 
@@ -17,9 +16,12 @@ fn main() {
             println!("Received: {}", msg);
 
             // Reply with acknowledgment
-            socket.send(Message::Text("Received timestamp".into())).unwrap();
+            socket
+                .send(Message::Text("Received timestamp".into()))
+                .unwrap();
         }
 
         thread::sleep(Duration::from_millis(500));
     }
 }
+
